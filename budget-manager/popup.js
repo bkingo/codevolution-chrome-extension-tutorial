@@ -1,3 +1,5 @@
+$(function() {
+    console.log($('#spendAmount'));
     $('#spendAmount').on('click', function() {
         chrome.storage.sync.get(['total'], function(budget) {
             let newTotal = 0;
