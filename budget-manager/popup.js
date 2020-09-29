@@ -1,5 +1,9 @@
 $(function() {
-    console.log($('#spendAmount'));
+    // When user opens pop-up, display the total
+    chrome.storage.sync.get(['total'], function(budget) {
+        $('#total').text(budget.total);
+    });
+
     $('#spendAmount').on('click', function() {
         chrome.storage.sync.get(['total'], function(budget) {
             let newTotal = 0;
