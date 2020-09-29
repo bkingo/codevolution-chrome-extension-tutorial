@@ -1,6 +1,5 @@
-$(function() {
-    $('spendamount').click(function() {
-        chrome.storage.sync.get('total', function(budget) {
+    $('#spendAmount').on('click', function() {
+        chrome.storage.sync.get(['total'], function(budget) {
             let newTotal = 0;
 
             if (budget.total) {
@@ -17,6 +16,6 @@ $(function() {
 
             $('#total').text(newTotal);
             $('#amount').val('');
-        })
+        });
     });
 });
